@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // Function to create a Todo component
 // The 4 functions defined in the Todo component
-function Todo({ task = "default todo", id = "1", remove, update }) {
+function Todo({ task = "default todo", id = "1", remove, updateTodo }) {
     // Set the state of the task to be edited
     const [editTask, setEditTask] = useState(task);
     // Set the state of the task to be edited
@@ -22,7 +22,7 @@ function Todo({ task = "default todo", id = "1", remove, update }) {
     const handleUpdate = e => {
         // Prevent the default action
         e.preventDefault();
-        update(id, editTask);
+        updateTodo(id, editTask);
         setIsEditing(false);
     };
     // Default view
